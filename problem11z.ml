@@ -24,7 +24,7 @@
                          end;
                 end
         ) myarr;
-        Printf.printf "%d\n" !cnt;; 
+        Printf.printf "%d \n" !cnt;; 
         
         let main =
              let in_channel = open_in Sys.argv.(1) in
