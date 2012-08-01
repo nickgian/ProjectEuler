@@ -3,15 +3,14 @@ let rec exploreLstOf (lst : int list list) prev acc =
     | [num]::tl, [dist] -> let newprev = (List.rev ((num+dist)::acc)) in
                            begin
                              match tl,newprev with 
-                               | [], dists -> let findmax lst = List.fold_left ( fun maxval distance -> if (maxval>distance) then maxval else distance) 0 lst in
+                               | [], dists -> let findmax lst = List.fold_left ( fun maxval distance -> (max maxval distance)) 0 lst in
                                                 findmax dists
                                | (((num1)::nums)::t), ((dist1)::dists) -> exploreLstOf (nums::t) (dist1::dists) ((num1+dist1)::[]) 
                                | _,_ -> failwith "Reached unreachable point"
                            end
     | (num::nums)::tl, (dist1::dist2::dists) -> let d1=num+dist1 in
                                              let d2=num+dist2 in
-                                             let max= if (d1>d2) then d1 else d2 in
-                                               exploreLstOf (nums::tl) (dist2::dists) ((max)::acc)  
+                                               exploreLstOf (nums::tl) (dist2::dists) ((max d1 d2)::acc)  
     | _,_ -> failwith "Reached unreachable point"
 
 let solve file =
