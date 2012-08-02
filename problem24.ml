@@ -35,4 +35,5 @@ let permutations =
     done;
     Array.iter (fun value -> Printf.printf "%d" value) perm;
     Printf.printf "\n"
-    ;;
+;;
+
