@@ -27,4 +27,3 @@ let rec brute n =
     match res with
       | false -> brute (n+1)
       | true ->  ((sum (float n)),n);;
-;;
