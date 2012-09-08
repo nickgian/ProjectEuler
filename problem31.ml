@@ -1,5 +1,5 @@
 let rec withOne num coin restcoins acc =
-        if (coin=1) then acc+1
+        if (coin=1) then 1
         else
           match num with 
             | i when i < coin -> acc
