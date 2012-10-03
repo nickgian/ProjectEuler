@@ -1,2 +1,16 @@
+.DS_Store
 .*.*.swp
+.*.*.swo
 .*.swp
+.*.swo
+*.cmx
+*.cmi
+*.cmo
+*.cma
+*.cmxa
+*.cmx
+*.cmxs
+*.o
+*.obj
+*.a
+/bin
