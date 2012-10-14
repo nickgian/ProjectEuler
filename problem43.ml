@@ -12,14 +12,14 @@ let valid d =
 ;;
 
 let solve = 
-    let xs = [Int 0; Int 1; Int 2; Int 3; Int 4; Int 5; Int 6; Int 7; Int 8; Int 9] in
+    let xs = [ 0; 1; 2; 3; 4; 5; 6; 7; 8; 9] in
     let perm = Array.of_list xs in
     let digits = Array.length perm in
     let num = ref 0 in
     let sum = ref 0 in
     let rec aux() =
         match try Some (Permutations.nextPermutation perm) with Permutations.LastPermutation -> None with
-            | Some _ -> Array.iteri (fun ind value ->  (num := (!num) + (int_of_baseTypes value)*(MathTools.int_pow 10 (digits-ind-1)))) perm;
+            | Some _ -> Array.iteri (fun ind value ->  (num := (!num) + (value)*(MathTools.int_pow 10 (digits-ind-1)))) perm;
                         if (valid perm) then sum := (!sum) + (!num);
                         num := 0;
                         aux ();
