@@ -1,3 +1,5 @@
+open Euler
+
 let array_of_int n = Array.of_list (MathTools.digitize n)
 let int_of_array n = MathTools.undigitize (Array.to_list n)
 
