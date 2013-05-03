@@ -1,4 +1,4 @@
-import           Data.List as L
+import Data.List as L
 
 reverseDigits :: Integer -> Integer
 reverseDigits n =
@@ -12,7 +12,7 @@ isNotPalindrome n =
 isLychrel n =
   50 == (length $ takeWhile isNotPalindrome $ take 50 $ tail $ iterate (\x -> x + reverseDigits x) n)
 
-solve = length $ [n | n <- [1..100000], isLychrel n]
+solve = length $ [n | n <- [1..10000], isLychrel n]
 
 main =
   do putStrLn $ show solve
